@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ekub</title>
+    <link rel="stylesheet" href="ekub.css">
+  </head>
+  <body>
+    <div class="container">
+    <label for="name">Name</label>
+      <input type="text" id="Name" placeholder="Name Here"><br><br>
+      <label for="amount">Amount</label> 
+      <input type="number" id="amount" placeholder="Amount"\n><br>
+      <button type="button" name="button" onclick="add()">Add</button><br>
+    </div>
+    <div class="List">
+      <h1>List</h1>
+      <p id="list"></p>
+      <button type="button" onclick="rand()">Select Member</button>
+      <p id="h" color="white"></p>
+    </div>
+  </body>
+  <script>
+    const list=[];
+    let initial=0;
+    function add() {
+      const name = document.getElementById("Name").value;
+      const amount =document.getElementById("amount").value;
+      list[initial]=name + amount;
+      initial=initial+1;
+    
+      document.getElementById("list").innerHTML=document.getElementById("list").innerHTML+ name+"--------";
+      document.getElementById("list").innerHTML=document.getElementById("list").innerHTML+ amount+"<br>";
+      
+    }
+    function rand(){
+        let a = Math.floor(Math.random()*(list.length));
+    
+        document.getElementById("h").innerHTML=list[a];
+         alert("index " + a +" selected")
+    }
+
+  </script>
+</html>
